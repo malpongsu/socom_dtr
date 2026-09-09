@@ -18,6 +18,25 @@ Web-based PHP + MySQL Daily Time Record system using an RFID reader and RFID tag
 - A web server (Apache/Nginx) or PHP's built-in server
 - A USB/serial RFID reader configured as a HID keyboard-wedge device (types the tag ID + Enter)
 
+## Deploying to Vercel
+
+This project includes `vercel.json` and uses the community PHP runtime. Vercel
+does not provide a local MySQL server, so create a hosted MySQL database first,
+then import `database.sql` into it. Add these environment variables in the
+Vercel project settings for **Production** (and **Preview** if needed):
+
+```text
+DB_HOST=your-mysql-host
+DB_PORT=3306
+DB_NAME=your-database-name
+DB_USER=your-database-user
+DB_PASS=your-database-password
+```
+
+Redeploy after adding the variables. Do not use `localhost` for `DB_HOST` on
+Vercel; that points to the short-lived serverless function itself, not your
+computer or hosted database.
+
 ## Setup
 1. Create the database and tables:
    ```

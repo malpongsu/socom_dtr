@@ -1,15 +1,18 @@
 <?php
 declare(strict_types=1);
 
-// Update these credentials to match your MySQL/MariaDB setup.
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'socom_dtr');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+// Vercel provides these values as project environment variables. Local development
+// keeps the original defaults so the app still works with a local MySQL install.
+define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+define('DB_NAME', getenv('DB_NAME') ?: 'socom_dtr');
+define('DB_USER', getenv('DB_USER') ?: 'root');
+define('DB_PASS', getenv('DB_PASS') ?: '');
+
+$dbPort = getenv('DB_PORT') ?: '3306';
 
 try {
     $pdo = new PDO(
-        'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4',
+        'mysql:host=' . DB_HOST . ';port=' . $dbPort . ';dbname=' . DB_NAME . ';charset=utf8mb4',
         DB_USER,
         DB_PASS,
         [
