@@ -20,22 +20,24 @@ Web-based PHP + MySQL Daily Time Record system using an RFID reader and RFID tag
 
 ## Deploying to Vercel
 
-This project includes `vercel.json` and uses the community PHP runtime. Vercel
-does not provide a local MySQL server, so create a hosted MySQL database first,
-then import `database.sql` into it. Add these environment variables in the
-Vercel project settings for **Production** (and **Preview** if needed):
+This project includes `vercel.json` and uses the community PHP runtime. For
+Supabase, run `database.supabase.sql` in the Supabase SQL Editor, then add these
+environment variables in the Vercel project settings for **Production** (and
+**Preview** if needed):
 
 ```text
-DB_HOST=your-mysql-host
-DB_PORT=3306
-DB_NAME=your-database-name
-DB_USER=your-database-user
-DB_PASS=your-database-password
+DB_DRIVER=pgsql
+DB_HOST=aws-0-YOUR-REGION.pooler.supabase.com
+DB_PORT=6543
+DB_NAME=postgres
+DB_USER=postgres.YOUR_PROJECT_REF
+DB_PASS=your-supabase-database-password
 ```
 
 Redeploy after adding the variables. Do not use `localhost` for `DB_HOST` on
-Vercel; that points to the short-lived serverless function itself, not your
-computer or hosted database.
+Vercel. Copy the pooler host, user, and port from Supabase under **Connect**
+using the **Transaction pooler** option. The PostgreSQL connection uses SSL
+automatically.
 
 ## Setup
 1. Create the database and tables:

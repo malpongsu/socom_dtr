@@ -10,10 +10,10 @@ if ($year < 2000 || $year > 2100) {
 }
 
 $stmt = $pdo->prepare(
-    'SELECT DAY(a.log_date) AS d, GROUP_CONCAT(u.name ORDER BY u.name SEPARATOR ", ") AS names
+    "SELECT EXTRACT(DAY FROM a.log_date) AS d, STRING_AGG(u.name, ', ' ORDER BY u.name) AS names
      FROM attendance a JOIN users u ON u.id = a.user_id
-     WHERE MONTH(a.log_date) = ? AND YEAR(a.log_date) = ?
-     GROUP BY DAY(a.log_date)'
+     WHERE EXTRACT(MONTH FROM a.log_date) = ? AND EXTRACT(YEAR FROM a.log_date) = ?
+     GROUP BY EXTRACT(DAY FROM a.log_date)"
 );
 $stmt->execute([$month, $year]);
 $namesByDay = [];

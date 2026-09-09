@@ -8,7 +8,7 @@ $assetPath = '../';
 
 $totalUsers = (int) $pdo->query('SELECT COUNT(*) FROM users')->fetchColumn();
 $totalAdmins = (int) $pdo->query('SELECT COUNT(*) FROM admins')->fetchColumn();
-$todayCount = (int) $pdo->query("SELECT COUNT(*) FROM attendance WHERE log_date = CURDATE()")->fetchColumn();
+$todayCount = (int) $pdo->query("SELECT COUNT(*) FROM attendance WHERE log_date = CURRENT_DATE")->fetchColumn();
 
 require __DIR__ . '/../includes/header.php';
 ?>

@@ -1,20 +1,28 @@
 <?php
 declare(strict_types=1);
 
-// Vercel provides these values as project environment variables. Local development
-// keeps the original defaults so the app still works with a local MySQL install.
-define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
-define('DB_NAME', getenv('DB_NAME') ?: 'socom_dtr');
-define('DB_USER', getenv('DB_USER') ?: 'root');
-define('DB_PASS', getenv('DB_PASS') ?: '');
+// Set DB_DRIVER=pgsql for Supabase. MySQL remains the local-development default.
+$dbDriver = strtolower(getenv('DB_DRIVER') ?: 'mysql');
+$dbHost = getenv('DB_HOST') ?: 'localhost';
+$dbName = getenv('DB_NAME') ?: 'socom_dtr';
+$dbUser = getenv('DB_USER') ?: 'root';
+$dbPass = getenv('DB_PASS') ?: '';
+$dbPort = getenv('DB_PORT') ?: ($dbDriver === 'pgsql' ? '5432' : '3306');
 
-$dbPort = getenv('DB_PORT') ?: '3306';
+if (!in_array($dbDriver, ['mysql', 'pgsql'], true)) {
+    throw new RuntimeException('DB_DRIVER must be mysql or pgsql.');
+}
 
 try {
+    $dsn = $dbDriver . ':host=' . $dbHost . ';port=' . $dbPort . ';dbname=' . $dbName;
+    if ($dbDriver === 'pgsql') {
+        $dsn .= ';sslmode=require';
+    }
+
     $pdo = new PDO(
-        'mysql:host=' . DB_HOST . ';port=' . $dbPort . ';dbname=' . DB_NAME . ';charset=utf8mb4',
-        DB_USER,
-        DB_PASS,
+        $dsn,
+        $dbUser,
+        $dbPass,
         [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
