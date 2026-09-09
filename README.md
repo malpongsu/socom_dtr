@@ -39,6 +39,12 @@ Vercel. Copy the pooler host, user, and port from Supabase under **Connect**
 using the **Transaction pooler** option. The PostgreSQL connection uses SSL
 automatically.
 
+The application is PHP-based and currently connects to Supabase through PDO;
+it does not use `@supabase/server`. That package is for a Node/TypeScript
+server handler and should only be added if one is introduced. A safe variable
+template is available in `.env.example`; never commit real Supabase secret
+keys.
+
 ## Setup
 1. Create the database and tables:
    ```
