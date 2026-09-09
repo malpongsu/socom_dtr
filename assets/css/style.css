@@ -1,0 +1,109 @@
+:root {
+    --socom-bg: #15181c;
+    --socom-surface: #20252b;
+    --socom-surface-soft: #292f36;
+    --socom-border: #3c444d;
+    --socom-text: #e8edf2;
+    --socom-muted: #aab4bf;
+    --socom-accent: #f5bd45;
+}
+
+body {
+    background-color: var(--socom-bg);
+    color: var(--socom-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body > .container {
+    flex: 1 0 auto;
+}
+
+.navbar.bg-dark {
+    background-color: #0d0f11 !important;
+    border-bottom: 1px solid var(--socom-border);
+}
+
+.card {
+    background-color: var(--socom-surface);
+    border-color: var(--socom-border);
+    color: var(--socom-text);
+}
+
+.text-secondary,
+.text-muted {
+    color: var(--socom-muted) !important;
+}
+
+.form-control,
+.form-select {
+    background-color: #171a1e;
+    border-color: var(--socom-border);
+    color: var(--socom-text);
+}
+
+.form-control::placeholder {
+    color: #7f8a96;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: #171a1e;
+    border-color: var(--socom-accent);
+    color: var(--socom-text);
+    box-shadow: 0 0 0 0.2rem rgba(245, 189, 69, 0.2);
+}
+
+.scan-card {
+    border-radius: 1rem;
+}
+
+#rfid_tag {
+    letter-spacing: 2px;
+}
+
+.calendar-table th, .calendar-table td {
+    width: 14.28%;
+    height: 80px;
+    vertical-align: top;
+    padding: 6px;
+}
+
+.calendar-table td.empty {
+    background-color: #1a1e23;
+}
+
+.calendar-table .day-number {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.calendar-table .has-attendance {
+    background-color: #263b35;
+}
+
+.navbar-brand i {
+    color: #ffc107;
+}
+
+code {
+    color: #f2c96d;
+    background-color: #171a1e;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.table {
+    --bs-table-color: var(--socom-text);
+    --bs-table-bg: var(--socom-surface);
+    --bs-table-border-color: var(--socom-border);
+    --bs-table-striped-bg: var(--socom-surface-soft);
+    --bs-table-hover-bg: #303840;
+}
+
+body > footer {
+    width: 100%;
+    margin-top: auto !important;
+    border-color: var(--socom-border) !important;
+}
