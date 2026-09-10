@@ -111,7 +111,7 @@ require __DIR__ . '/../includes/header.php';
 <div class="table-responsive">
 <table class="table table-striped table-hover align-middle">
   <thead class="table-dark">
-    <tr><th>Name</th><th>Date</th><th>Time In</th><th>Time Out</th></tr>
+    <tr><th class="text-center">Name</th><th>Date</th><th>Time In</th><th>Time Out</th></tr>
   </thead>
   <tbody>
     <?php if (!$details): ?>
@@ -119,7 +119,7 @@ require __DIR__ . '/../includes/header.php';
     <?php endif; ?>
     <?php foreach ($details as $row): ?>
       <tr>
-        <td><?= e($row['name']) ?></td>
+        <td class="text-center"><?= e($row['name']) ?></td>
         <td><?= e($row['log_date']) ?></td>
         <td><?= $row['time_in'] ? date('h:i A', strtotime($row['time_in'])) : '-' ?></td>
         <td><?= $row['time_out'] ? date('h:i A', strtotime($row['time_out'])) : '-' ?></td>

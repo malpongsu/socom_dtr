@@ -14,7 +14,7 @@ require __DIR__ . '/includes/header.php';
 <div class="table-responsive">
 <table class="table table-striped table-hover align-middle">
   <thead class="table-dark">
-    <tr><th>#</th><th>Name</th><th>Department</th><th>Date Registered</th></tr>
+    <tr><th>#</th><th class="text-center">Name</th><th>Department</th><th>Date Registered</th></tr>
   </thead>
   <tbody>
     <?php if (!$users): ?>
@@ -23,7 +23,7 @@ require __DIR__ . '/includes/header.php';
     <?php foreach ($users as $i => $u): ?>
       <tr>
         <td><?= $i + 1 ?></td>
-        <td><?= e($u['name']) ?></td>
+        <td class="text-center"><?= e($u['name']) ?></td>
         <td><?= e($u['department'] ?: '-') ?></td>
         <td><?= date('M d, Y', strtotime($u['created_at'])) ?></td>
       </tr>

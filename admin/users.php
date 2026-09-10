@@ -23,7 +23,7 @@ require __DIR__ . '/../includes/header.php';
 <div class="table-responsive">
 <table class="table table-striped table-hover align-middle">
   <thead class="table-dark">
-    <tr><th>ID</th><th>Name</th><th>RFID Tag</th><th>Department</th><th>Created</th><th>Action</th></tr>
+    <tr><th>ID</th><th class="text-center">Name</th><th>RFID Tag</th><th>Department</th><th>Created</th><th>Action</th></tr>
   </thead>
   <tbody>
     <?php if (!$users): ?>
@@ -32,7 +32,7 @@ require __DIR__ . '/../includes/header.php';
     <?php foreach ($users as $u): ?>
       <tr>
         <td><?= (int) $u['id'] ?></td>
-        <td><?= e($u['name']) ?></td>
+        <td class="text-center"><?= e($u['name']) ?></td>
         <td><code><?= e($u['rfid_tag']) ?></code></td>
         <td><?= e($u['department'] ?: '-') ?></td>
         <td><?= date('M d, Y h:i A', strtotime($u['created_at'])) ?></td>
