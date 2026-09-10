@@ -10,6 +10,12 @@
 
 body {
     background-color: var(--socom-bg);
+    background-image: linear-gradient(rgba(21, 24, 28, 0.88), rgba(21, 24, 28, 0.94)),
+        url('../images/510257317_122094190988929257_2828329964117250830_n.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: var(--socom-text);
     min-height: 100vh;
     display: flex;
