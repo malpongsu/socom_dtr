@@ -6,20 +6,36 @@
     --socom-text: #e8edf2;
     --socom-muted: #aab4bf;
     --socom-accent: #f5bd45;
+    --socom-body-font: 'Manrope', sans-serif;
+    --socom-display-font: 'Space Grotesk', sans-serif;
 }
 
 body {
     background-color: var(--socom-bg);
-    background-image: linear-gradient(rgba(21, 24, 28, 0.88), rgba(21, 24, 28, 0.94)),
-        url('../images/510257317_122094190988929257_2828329964117250830_n.jpg');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     color: var(--socom-text);
+    font-family: var(--socom-body-font);
+    font-size: 0.95rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.5;
+    pointer-events: none;
+    background-image: url('../images/510257317_122094190988929257_2828329964117250830_n.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
 }
 
 body > .container {
@@ -29,6 +45,17 @@ body > .container {
 .navbar.bg-dark {
     background-color: #0d0f11 !important;
     border-bottom: 1px solid var(--socom-border);
+}
+
+.navbar-brand,
+h1, h2, h3, h4, h5, h6,
+.card-title {
+    font-family: var(--socom-display-font);
+    letter-spacing: 0;
+}
+
+.navbar-brand {
+    letter-spacing: 0.01em;
 }
 
 .card {
