@@ -58,6 +58,14 @@ h1, h2, h3, h4, h5, h6,
     letter-spacing: 0.01em;
 }
 
+.brand-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid var(--socom-accent);
+}
+
 .card {
     background-color: var(--socom-surface);
     border-color: var(--socom-border);
@@ -133,6 +141,12 @@ code {
     --bs-table-border-color: var(--socom-border);
     --bs-table-striped-bg: var(--socom-surface-soft);
     --bs-table-hover-bg: #303840;
+}
+
+.table > :not(caption) > * > *,
+.table th,
+.table td {
+    color: #ffffff !important;
 }
 
 body > footer {

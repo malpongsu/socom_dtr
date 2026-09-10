@@ -32,7 +32,7 @@ require __DIR__ . '/../includes/header.php';
     </div>
   </div>
   <div class="col-md-4">
-    <div class="card text-bg-light shadow-sm border">
+    <div class="card text-bg-dark shadow-sm border">
       <div class="card-body">
         <div class="text-uppercase small">Admin Accounts</div>
         <div class="fs-2 fw-bold"><?= $totalAdmins ?></div>
@@ -43,16 +43,16 @@ require __DIR__ . '/../includes/header.php';
 
 <div class="row g-3">
   <div class="col-md-3 col-6">
-    <a href="register_user.php" class="btn btn-outline-dark w-100 py-3"><i class="bi bi-person-badge d-block fs-3 mb-1"></i> Register RFID User</a>
+    <a href="register_user.php" class="btn btn-outline-light w-100 py-3"><i class="bi bi-person-badge d-block fs-3 mb-1"></i> Register RFID User</a>
   </div>
   <div class="col-md-3 col-6">
-    <a href="users.php" class="btn btn-outline-dark w-100 py-3"><i class="bi bi-people d-block fs-3 mb-1"></i> Registered Users</a>
+    <a href="users.php" class="btn btn-outline-light w-100 py-3"><i class="bi bi-people d-block fs-3 mb-1"></i> Registered Users</a>
   </div>
   <div class="col-md-3 col-6">
-    <a href="reports.php" class="btn btn-outline-dark w-100 py-3"><i class="bi bi-bar-chart d-block fs-3 mb-1"></i> Monthly Report</a>
+    <a href="reports.php" class="btn btn-outline-light w-100 py-3"><i class="bi bi-bar-chart d-block fs-3 mb-1"></i> Monthly Report</a>
   </div>
   <div class="col-md-3 col-6">
-    <a href="register_admin.php" class="btn btn-outline-dark w-100 py-3"><i class="bi bi-person-plus d-block fs-3 mb-1"></i> Register Admin</a>
+    <a href="register_admin.php" class="btn btn-outline-light w-100 py-3"><i class="bi bi-person-plus d-block fs-3 mb-1"></i> Register Admin</a>
   </div>
 </div>
 <?php require __DIR__ . '/../includes/footer.php'; ?>

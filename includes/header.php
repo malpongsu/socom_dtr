@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?= e($pageTitle ?? 'SOCOM Daily Time Record') ?> | SOCOM Daily Time Record</title>
+<link rel="icon" type="image/jpeg" href="<?= $assetPath ?>assets/images/510257317_122094190988929257_2828329964117250830_n.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -15,7 +16,10 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="<?= $assetPath ?>index.php"><i class="bi bi-fingerprint"></i> SOCOM Daily Time Record</a>
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="<?= $assetPath ?>index.php">
+      <img class="brand-logo" src="<?= $assetPath ?>assets/images/510257317_122094190988929257_2828329964117250830_n.jpg" alt="SOCOM logo">
+      <span><i class="bi bi-fingerprint"></i> SOCOM Daily Time Record</span>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
       <span class="navbar-toggler-icon"></span>
     </button>
