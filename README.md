@@ -31,7 +31,7 @@ DB_HOST=aws-0-YOUR-REGION.pooler.supabase.com
 DB_PORT=6543
 DB_NAME=postgres
 DB_USER=postgres.YOUR_PROJECT_REF
-DB_PASS=your-supabase-database-password
+DB_PASSWORD=your-supabase-database-password
 ```
 
 Redeploy after adding the variables. Do not use `localhost` for `DB_HOST` on
