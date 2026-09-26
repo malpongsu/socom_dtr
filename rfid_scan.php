@@ -22,7 +22,8 @@ if (!$user) {
 }
 
 $today = date('Y-m-d');
-$now = date('Y-m-d H:i:s');
+// CHANGE THIS LINE: Add '+08:00' so PostgreSQL knows this is Philippine Time
+$now = date('Y-m-d H:i:s') . '+08:00';
 
 $stmt = $pdo->prepare('SELECT id, time_in, time_out FROM attendance WHERE user_id = ? AND log_date = ?');
 $stmt->execute([$user['id'], $today]);
