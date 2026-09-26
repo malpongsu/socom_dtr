@@ -4,6 +4,9 @@ declare(strict_types=1);
 // Set default timezone to Philippine Time for the whole app
 date_default_timezone_set('Asia/Manila');
 
+$currentDate = date('Y-m-d'); // e.g., 2026-09-26
+$currentTime = date('H:i:s'); // e.g., 08:51:11 (24-hour format avoids AM/PM confusion in databases)
+
 // Set DB_DRIVER=pgsql for Supabase. Credentials must come from the environment.
 $dbDriver = strtolower(getenv('DB_DRIVER') ?: 'mysql');
 $dbHost = getenv('DB_HOST') ?: '';
